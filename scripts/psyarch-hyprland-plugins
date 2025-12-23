@@ -1,13 +1,10 @@
+#!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  exec-once = systemctl --user start hyprpolkitagent
-  exec-once = hyprpm reload
-  exec-once = swaync
-  exec-once = psypaper
+  pikaur -S --needed --noconfirm meson cpio cmake
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  exec-once = vesktop
-  exec-once = spotify
-  exec-once = steam
-  exec-once = kitty --title "System Monitor" -e btop
+  hyprpm update
+  hyprpm add https://github.com/hyprwm/hyprland-plugins
+  hyprpm enable hyprfocus
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  exec-once = hyprctl dispatch workspace 3
+  mv $HOME/.config/hypr/psyarch/hyprfocus.off $HOME/.config/hypr/psyarch/hyprfocus.conf
 # ──────────────────────────────────────────────────────────────────────────────────────────────

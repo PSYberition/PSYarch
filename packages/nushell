@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pikaur -S --needed --noconfirm $(basename "$0") fastfetch lolcat
-  cp -r "$(dirname "$0")/../config/nushell" "$HOME/.config/nushell"
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    fastfetch lolcat
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+  cp -r "$(dirname "$0")/../configs/fastfetch" "$HOME/.config"
+  cp -r "$(dirname "$0")/../configs/$APP" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
   chsh -s /usr/bin/nu
 # ──────────────────────────────────────────────────────────────────────────────────────────────

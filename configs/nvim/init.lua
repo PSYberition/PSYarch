@@ -9,7 +9,6 @@
     local file, err = io.open(matugen_path, "r")
     if err ~= nil then
       vim.cmd('colorscheme base16-catppuccin-mocha')
-      vim.print("A matugen style file was not found, but that's okay! The colorscheme will dynamically change if matugen runs!")
     else
       dofile(matugen_path)
       io.close(file)

@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pikaur -S --needed --noconfirm $(basename "$0")
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    rocm-smi-lib
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  CONFIG="$HOME/.config/btop/btop.conf"
-# ──────────────────────────────────────────────────────────────────────────────────────────────
-  btop & disown; sleep .1
-  sed -i "s|color_theme = \"Default\"|color_theme = \
-  \"$HOME/.config/btop/themes/matugen.theme\"|" "$CONFIG"
-  sed -i "s|vim_keys = False|vim_keys = True|" "$CONFIG"
-  sed -i "s|update_ms = 2000|update_ms = 100|" "$CONFIG"
+  cp -r "$(dirname "$0")/../configs/$APP" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────

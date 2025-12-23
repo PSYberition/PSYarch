@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pikaur -S --needed --noconfirm $(basename "$0") otf-cascadia-code
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    otf-cascadia-code noto-fonts-emoji
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  cp -r "$(dirname "$0")/../config/kitty" "$HOME/.config/kitty"
+  cp -r "$(dirname "$0")/../configs/$APP" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────

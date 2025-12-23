@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pikaur -S --needed --noconfirm $(basename "$0")
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  CONFIG="/etc/ly/config.ini"
+  sudo cp -r "$(dirname "$0")/../configs/$APP" "/etc"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  sleep .1; sudo chmod a+w "$CONFIG"
-  sed -i "s|hide_keyboard_locks = false|hide_keyboard_locks = true|" "$CONFIG"
-  sed -i "s|hide_version_string = false|hide_version_string = true|" "$CONFIG"
-  sed -i "s|default_input = login|default_input = password|" "$CONFIG"
-  sed -i "s|clear_password = false|clear_password = true|" "$CONFIG"
-  sed -i "s|hide_key_hints = false|hide_key_hints = true|" "$CONFIG"
-  sed -i "s|text_in_center = false|text_in_center = true|" "$CONFIG"
-  sed -i "s|animation = none|animation = colormix|" "$CONFIG"
-  sed -i "s|numlock = false|numlock = true|" "$CONFIG"
-  sudo chmod a-w "$CONFIG"
+  systemctl enable ly@tty2.service
 # ──────────────────────────────────────────────────────────────────────────────────────────────

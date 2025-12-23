@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pikaur -S --needed --noconfirm $(basename "$0") hyprpolkitagent \
-                  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    swaync pipewire wireplumber qt5-wayland qt6-wayland hyprpolkitagent \
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
+    noto-fonts ttf-jetbrains-mono-nerd
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+  cp -r "$(dirname "$0")/../configs/hypr" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
