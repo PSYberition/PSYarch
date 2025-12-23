@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# ────────────────────────────────────────────────────────────────────────────── run & disown ──
+  if [[ "$1" != "run" ]]; then nohup "$0" run > /dev/null 2>&1 & disown; exit; fi
+# ───────────────────────────────────────────────────────────────────────────────── variables ──
+  list="$HOME/.local/state/backgrouds.txt"; dir="$HOME/Pictures/Wallpapers"
+# ──────────────────────────────────────────────────────────────────────────────── write list ──
+  mkdir -p "$(dirname "$list")"; if [ ! -e "$list" ]; then touch "$list"; fi
+  if [ ! -s "$list" ]; then (ls -l "$dir" | awk '{print $9}') | awk 'NF' > "$list"; fi
+# ───────────────────────────────────────────────────────────────────────────────── randomize ──
+  wall=$(shuf -n 1 "$list"); grep -vF "$wall" "$list" > "${list}.tmp"; mv "${list}.tmp" "$list"
+# ───────────────────────────────────────────────────────────────────────────────────── apply ──
+  ffmpeg -y -i "$dir/$wall" -vframes 1 -q:v 2 /tmp/matugen.jpg; pkill mpvpaper; pkill swaybg
+  matugen image /tmp/matugen.jpg
+  case "${wall,,}" in *.mp4)mpvpaper -p -o "no-audio loop" DP-2 "$dir/$wall";;esac
+  case "${wall,,}" in *.jpg|*.jpeg|*.png)swaybg -i "$dir/$wall";;esac
+# ──────────────────────────────────────────────────────────────────────────────────────────────

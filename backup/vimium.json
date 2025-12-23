@@ -1,0 +1,6 @@
+{
+  "keyMappings": "",
+  "searchEngines": "gg: https://www.google.com/search?q=%s Google Search\ngm: https://www.google.com/maps?q=%s Google Maps\nyt: https://www.youtube.com/results?search_query=%s YouTube\nam: https://www.amazon.com/s/?field-keywords=%s Amazon\nalr: https://archlinux.org/packages/?sort=&q=%s&maintainer=&flagged= Arch Linux Repository\naur: https://aur.archlinux.org/packages?O=0&K=%s Arch User Repository\ngh: https://github.com/search?q=%s&type=repositories GitHub\ndf: https://en.wiktionary.org/wiki/%s Wiktionary\nnvc: https://neovimcraft.com/?search=%s Neovimcraft",
+  "settingsVersion": "2.3.1",
+  "exclusionRules": []
+}
