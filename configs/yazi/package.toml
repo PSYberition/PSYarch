@@ -14,14 +14,21 @@ rev = "19dc890"
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
-use = "dedukun/bookmarks"
-rev = "9ef1254"
-hash = "92fbb5483657fa7976cdf4e0104e18e0"
-
-[[plugin.deps]]
 use = "yazi-rs/plugins:git"
 rev = "19dc890"
 hash = "27ca02f49fd236b5cc7bf03c243859fe"
 
-[flavor]
-deps = []
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "7ca66b4"
+hash = "5b2eb0cc2050cec1e4de83cfa51a5b90"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "7ca66b4"
+hash = "ce67445ebb1bf3d97b8e44f50904b2c5"

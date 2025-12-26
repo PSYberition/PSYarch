@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  if ! command -v pikaur > /dev/null 2>&1; then
-    sudo pacman -S --needed git; git clone https://aur.archlinux.org/pikaur.git
-    cd pikaur; makepkg -fsri; cd ..; sudo rm -rf pikaur
-  fi
-  cp -r "$(dirname "$0")/../configs/pikaur.conf" "$HOME/.config/pikaur.conf"
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP
 # ──────────────────────────────────────────────────────────────────────────────────────────────

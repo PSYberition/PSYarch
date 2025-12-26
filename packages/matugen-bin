@@ -3,4 +3,6 @@
   APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP
 # ──────────────────────────────────────────────────────────────────────────────────────────────
   cp -r "$(dirname "$0")/../configs/matugen" "$HOME/.config"
+  sudo mkdir -p /etc/brave/policies/managed
+  sudo chmod -R 777 /etc/brave
 # ──────────────────────────────────────────────────────────────────────────────────────────────
