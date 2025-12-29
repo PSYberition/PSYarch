@@ -11,6 +11,6 @@
     esac; else exit 1; fi
   fi
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  # sudo rm -rf ~/.steam; steam
-  pikaur -S --needed --noconfirm gamescope millennium
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    gamescope
 # ──────────────────────────────────────────────────────────────────────────────────────────────

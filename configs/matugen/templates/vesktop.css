@@ -10,7 +10,7 @@
   --idle-indicator:#f0b232;
   --dnd-indicator:#f13f43;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-  --accent-1: #52AEC3;                                    /* links */
+  --accent-1: #00aacc;                                    /* links */
   --accent-2: {{colors.primary.default.hex}};             /* general unread/mention elements, some icons when active */
   --accent-3: {{colors.primary.default.hex}};             /* accent buttons */
   --accent-4: {{colors.primary_fixed.default.hex}};       /* accent buttons when hovered */

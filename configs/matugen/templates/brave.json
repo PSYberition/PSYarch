@@ -1,3 +1,1 @@
-{
-  "BrowserThemeColor": "{{colors.on_secondary_fixed.default.hex}}"
-}
+{ "BrowserThemeColor": "{{colors.on_secondary_fixed.default.hex}}" }

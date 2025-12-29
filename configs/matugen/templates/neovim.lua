@@ -3,7 +3,7 @@
     base00 = '{{colors.on_secondary_fixed.default.hex}}',
     base01 = '{{colors.on_primary.default.hex}}',
     base02 = '{{colors.inverse_primary.default.hex}}',
-    base03 = '{{colors.primary.default.hex}}',
+    base03 = '{{colors.inverse_primary.default.hex}}',
     base04 = '{{colors.on_primary_container.default.hex}}',
     base05 = '{{colors.on_primary_container.default.hex}}',
     base06 = '#ff0000', -- ???
@@ -24,7 +24,7 @@
 -- ─────────────────────────────────────────────────────────────────────────────────────────────
   vim.api.nvim_set_hl(0, 'Visual', {
     bg = '{{colors.primary_container.default.hex}}',
-    fg = '{{colors.background.default.hex}}',
+    fg = '{{colors.on_secondary_fixed.default.hex}}',
   })
 -- ─────────────────────────────────────────────────────────────────────────────────────────────
   set_hl_mutliple({ 'TSComment', 'Comment' }, {

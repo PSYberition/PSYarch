@@ -1,42 +1,35 @@
 [config]
-
-[templates.base]
-input_path = './templates/_base.conf'
-output_path = './_base.conf'
-
-[templates.brave]
-input_path = './templates/brave.json'
-output_path = '/etc/brave/policies/managed/color.json'
-post_hook = 'brave --refresh-platform-policy --no-startup-window &'
-
-[templates.btop]
-input_path = './templates/btop.theme'
-output_path = '~/.config/btop/themes/matugen.theme'
-post_hook = 'pkill -SIGHUP btop'
-
-[templates.hyprland]
-input_path = './templates/hyprland.conf'
-output_path = '~/.config/hypr/matugen/colors.conf'
-post_hook = 'hyprctl reload'
-
-[templates.hyprtoolkit]
-input_path = './templates/hyprtoolkit.conf'
-output_path = '~/.config/hypr/hyprtoolkit.conf'
-
-[templates.kitty]
-input_path = './templates/kitty.conf'
-output_path = '~/.config/kitty/themes/matugen.conf'
-post_hook = "kitty +kitten themes --reload-in=all matugen"
-
-[templates.neovim]
-input_path = './templates/neovim.lua'
-output_path = '~/.config/nvim/lua/matugen/theme.lua'
-post_hook = 'pkill -SIGUSR1 vi'
-
-[templates.steam]
-input_path = './templates/steam.css'
-output_path = '~/.steam/steam/steamui/skins/Material-Theme/css/main/colors/matugen.css'
-
-[templates.vesktop]
-input_path = './templates/vesktop.css'
-output_path = '~/.config/vesktop/themes/midnight-discord.css'
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+[templates.base] # ─────────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/_base.conf'
+  output_path = './_base.conf'
+[templates.brave] # ────────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/brave.json'
+  output_path = '/etc/brave/policies/managed/color.json'
+  post_hook   = 'brave --refresh-platform-policy --no-startup-window &'
+[templates.btop] # ─────────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/btop.theme'
+  output_path = '~/.config/btop/themes/matugen.theme'
+  post_hook   = 'pkill -SIGHUP btop'
+[templates.hyprland] # ─────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/hyprland.conf'
+  output_path = '~/.config/hypr/matugen/colors.conf'
+  post_hook   = 'hyprctl reload'
+[templates.hyprtoolkit] # ──────────────────────────────────────────────────────────────────────
+  input_path  = './templates/hyprtoolkit.conf'
+  output_path = '~/.config/hypr/hyprtoolkit.conf'
+[templates.kitty] # ────────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/kitty.conf'
+  output_path = '~/.config/kitty/themes/matugen.conf'
+  post_hook   = "kitty +kitten themes --reload-in=all matugen"
+[templates.millennium] # ───────────────────────────────────────────────────────────────────────
+  input_path  = './templates/steam.css'
+  output_path = '~/.steam/steam/steamui/skins/Material-Theme/css/main/colors/matugen.css'
+[templates.neovim] # ───────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/neovim.lua'
+  output_path = '~/.config/nvim/lua/matugen/theme.lua'
+  post_hook   = 'pkill -SIGUSR1 vi'
+[templates.vesktop] # ──────────────────────────────────────────────────────────────────────────
+  input_path  = './templates/vesktop.css'
+  output_path = '~/.config/vesktop/themes/midnight-discord.css'
+# ──────────────────────────────────────────────────────────────────────────────────────────────

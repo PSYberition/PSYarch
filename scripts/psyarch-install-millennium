@@ -1,4 +1,6 @@
+#!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  $image = {{image}}<* for name, value in colors *>
-  ${{name}} = rgba({{value.default.hex_stripped}}ff)<* endfor *>
+  if [ -d "$HOME/.steam" ]; then
+    pikaur -S --needed --noconfirm millennium
+  fi
 # ──────────────────────────────────────────────────────────────────────────────────────────────
