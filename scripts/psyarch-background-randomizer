@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  dir="$HOME/Pictures/Wallpapers"; bgs="$HOME/.local/state/bgs.txt"
+  [[ "$1" != "run" ]] && { nohup "$0" run > /dev/null 2>&1 & disown; exit; }
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  if [[ "$1" != "run" ]]; then nohup "$0" run > /dev/null 2>&1 & disown; exit; fi
+  DIR="$HOME/Pictures/Wallpapers"
+  BGS="$HOME/.local/state/bgs.txt"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  mkdir -p "$(dirname "$bgs")"; if [ ! -e "$bgs" ]; then touch "$bgs"; fi
-  if [ ! -s "$bgs" ]; then (ls -l "$dir" | awk '{print $9}') | awk 'NF' > "$bgs"; fi
+  mkdir -p "$(dirname "$BGS")"
+  [ ! -e "$BGS" ] && touch "$BGS"
+  [ ! -s "$BGS" ] && for f in $DIR/*; do echo "$f" >> "$BGS"; done
+  BG=$(shuf -n 1 "$BGS")
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  bg=$(shuf -n 1 "$bgs"); grep -vF "$bg" "$bgs" > "${bgs}.tmp"; mv "${bgs}.tmp" "$bgs"
+  grep -vF "$BG" "$BGS" > "${BGS}.tmp"
+  mv "${BGS}.tmp" "$BGS"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  ffmpeg -y -i "$dir/$bg" -vframes 1 -q:v 2 /tmp/matugen.jpg; matugen image /tmp/matugen.jpg
+  ffmpeg -y -i "$BG" -vframes 1 -q:v 2 /tmp/matugen.jpg
+  matugen image /tmp/matugen.jpg
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pkill mpvpaper; pkill swaybg
-  case "${bg,,}" in *.mp4) mpvpaper -po "no-audio loop" ALL "$dir/$bg";;esac
-  case "${bg,,}" in *.jpg|*.jpeg|*.png) swaybg -i "$dir/$bg";;esac
+  pkill -x mpvpaper; pkill -x swaybg
+  case "${BG,,}" in *.mp4 ) mpvpaper -p -o "no-audio loop" ALL "$BG" ;; esac
+  case "${BG,,}" in *.jpg | *.jpeg | *.png ) swaybg -i "$BG" ;; esac
 # ──────────────────────────────────────────────────────────────────────────────────────────────
