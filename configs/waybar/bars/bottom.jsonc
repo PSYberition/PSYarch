@@ -1,0 +1,47 @@
+{ "position": "bottom",
+  "reload_on_style_change": true,
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "modules-left": [
+    "custom/screenshot",
+    "custom/hyprsunset",
+  ],
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "modules-right": [
+    "tray",
+  ],
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "hyprland/workspaces": {
+    "format": "{windows}",
+    "format-window-separator": "",
+    "persistent-workspaces": {
+      "*": [1,2,3,4,5],
+    },
+    "workspace-taskbar": {
+      "enable": true,
+      "update-active-window": true,
+      "format": "{icon}",
+      "icon-size": 24,
+      "on-click-window": "psyarch-hyprland-focus {address} {button}",
+    },
+  },
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "tray": {
+    "icon-size": 24,
+  },
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+  "custom/screenshot": {
+    "format": "󰹑",
+    "tooltip": false,
+    "on-click": "psyarch-screenshot",
+  },
+  "custom/hyprsunset": {
+    "format": "󰖚",
+    "tooltip": false,
+    "on-click": "hyprsunset -t 4000 || pkill hyprsunset",
+  },
+// ─────────────────────────────────────────────────────────────────────────────────────────────
+}

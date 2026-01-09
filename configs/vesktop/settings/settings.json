@@ -49,7 +49,7 @@
         },
         "AccountPanelServerProfile": {
             "enabled": true,
-            "prioritizeServerProfile": false
+            "prioritizeServerProfile": true
         },
         "AlwaysAnimate": {
             "enabled": true
@@ -158,7 +158,9 @@
             "enabled": false
         },
         "CustomIdle": {
-            "enabled": false
+            "enabled": false,
+            "idleTimeout": 9.963898916967509,
+            "remainInIdle": false
         },
         "CustomRPC": {
             "enabled": false
@@ -279,7 +281,9 @@
             "enabled": false
         },
         "MessageClickActions": {
-            "enabled": true
+            "enabled": true,
+            "requireModifier": false,
+            "enableDoubleClickToEdit": true
         },
         "MessageLatency": {
             "enabled": false
@@ -453,7 +457,9 @@
             "enabled": true
         },
         "SilentTyping": {
-            "enabled": true
+            "enabled": true,
+            "isEnabled": true,
+            "showIcon": false
         },
         "SortFriendRequests": {
             "enabled": false
@@ -509,7 +515,10 @@
             "showSelf": true
         },
         "UserVoiceShow": {
-            "enabled": true
+            "enabled": true,
+            "showInUserProfileModal": true,
+            "showInMemberList": true,
+            "showInMessages": true
         },
         "USRBG": {
             "enabled": false
@@ -578,6 +587,9 @@
         },
         "WebContextMenus": {
             "enabled": true
+        },
+        "MoreQuickReactions": {
+            "enabled": false
         }
     },
     "uiElements": {
@@ -594,6 +606,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1766512408264
+        "settingsSyncVersion": 1767531595814
     }
 }

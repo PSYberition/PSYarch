@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  [[ "$1" != "run" ]] && { nohup "$0" run > /dev/null 2>&1 & disown; exit; }
+[[ "$1" != "run" ]] && { nohup "$0" run > /dev/null 2>&1 & disown; exit; }
+[ $# -ne 1 ] && exit 1
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  DIR="$HOME/Pictures/Wallpapers"
-  BGS="$HOME/.local/state/bgs.txt"
+dir="$1"
+bgs="$HOME/.local/state/bgs.txt"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  mkdir -p "$(dirname "$BGS")"
-  [ ! -e "$BGS" ] && touch "$BGS"
-  [ ! -s "$BGS" ] && for f in $DIR/*; do echo "$f" >> "$BGS"; done
-  BG=$(shuf -n 1 "$BGS")
+mkdir -p "$(dirname "$bgs")"
+[ ! -e "$bgs" ] && touch "$bgs"
+[ ! -s "$bgs" ] && for f in $dir/*; do echo "$f" >> "$bgs"; done
+bg=$(shuf -n 1 "$bgs")
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  grep -vF "$BG" "$BGS" > "${BGS}.tmp"
-  mv "${BGS}.tmp" "$BGS"
+grep -vF "$bg" "$bgs" > "${bgs}.tmp"
+mv "${bgs}.tmp" "$bgs"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  ffmpeg -y -i "$BG" -vframes 1 -q:v 2 /tmp/matugen.jpg
-  matugen image /tmp/matugen.jpg
+ffmpeg -y -i "$bg" -vframes 1 -q:v 2 /tmp/matugen.jpg
+matugen image /tmp/matugen.jpg
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  pkill -x mpvpaper; pkill -x swaybg
-  case "${BG,,}" in *.mp4 ) mpvpaper -p -o "no-audio loop" ALL "$BG" ;; esac
-  case "${BG,,}" in *.jpg | *.jpeg | *.png ) swaybg -i "$BG" ;; esac
+pkill -x mpvpaper; pkill -x swaybg
+case "${bg,,}" in *.mp4 ) mpvpaper -p -o "no-audio loop" ALL "$bg" ;; esac
+case "${bg,,}" in *.jpg | *.jpeg | *.png ) swaybg -i "$bg" ;; esac
 # ──────────────────────────────────────────────────────────────────────────────────────────────

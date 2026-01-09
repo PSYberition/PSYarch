@@ -1,6 +1,11 @@
 {
   "keyMappings": "",
-  "searchEngines": "gg: https://www.google.com/search?q=%s Google Search\ngm: https://www.google.com/maps?q=%s Google Maps\nyt: https://www.youtube.com/results?search_query=%s YouTube\nam: https://www.amazon.com/s/?field-keywords=%s Amazon\nalr: https://archlinux.org/packages/?sort=&q=%s&maintainer=&flagged= Arch Linux Repository\naur: https://aur.archlinux.org/packages?O=0&K=%s Arch User Repository\ngh: https://github.com/search?q=%s&type=repositories GitHub\ndf: https://en.wiktionary.org/wiki/%s Wiktionary\nnvc: https://neovimcraft.com/?search=%s Neovimcraft\next: https://chromewebstore.google.com/search/%s Chrome Web Store\nsdb: https://steamdb.info/search/?a=all&q=%s SteamDB",
+  "searchEngines": "gg: https://www.google.com/search?q=%s Google Search\ngm: https://www.google.com/maps?q=%s Google Maps\nyt: https://www.youtube.com/results?search_query=%s YouTube\nam: https://www.amazon.com/s/?field-keywords=%s Amazon\nalr: https://archlinux.org/packages/?sort=&q=%s&maintainer=&flagged= Arch Linux Repository\naur: https://aur.archlinux.org/packages?O=0&K=%s Arch User Repository\ngh: https://github.com/search?q=%s&type=repositories GitHub\ndf: https://en.wiktionary.org/wiki/%s Wiktionary\nnvc: https://neovimcraft.com/?search=%s Neovimcraft\next: https://chromewebstore.google.com/search/%s Chrome Web Store\nsdb: https://steamdb.info/search/?a=all&q=%s SteamDB\ngp: https://grokipedia.com/search?q=%s Grokipedia\nx: https://x.com/search?q=%s&src=typed_query X.com",
   "settingsVersion": "2.3.1",
-  "exclusionRules": []
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://nickcoutsos.github.io/*"
+    }
+  ]
 }

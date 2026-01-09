@@ -1,7 +1,5 @@
 -- ─────────────────────────────────────────────────────────────────────────────────────────────
-  require"configs.cmds"
-  require"configs.keys"
-  require"configs.lazy"
-  require"configs.opts"
-  require"matugen.conf"
+for f, t in vim.fs.dir(vim.fn.stdpath"config".."/lua/configs")do
+  if t == "file" and f:match"%.lua$"then require("configs."..f:gsub("%.lua$",""))end
+end
 -- ─────────────────────────────────────────────────────────────────────────────────────────────

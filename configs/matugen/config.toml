@@ -1,5 +1,4 @@
-[config]
-# ──────────────────────────────────────────────────────────────────────────────────────────────
+[config] # ─────────────────────────────────────────────────────────────────────────────────────
 [templates.base] # ─────────────────────────────────────────────────────────────────────────────
   input_path  = './templates/_base.conf'
   output_path = './_base.conf'
@@ -11,6 +10,13 @@
   input_path  = './templates/btop.theme'
   output_path = '~/.config/btop/themes/matugen.theme'
   post_hook   = 'pkill -SIGHUP btop'
+[templates.gtk3]
+  input_path  = './templates/colors.css'
+  output_path = '~/.config/gtk-3.0/colors.css'
+  post_hook   = 'gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-{{mode}}"'
+[templates.gtk4]
+  input_path  = './templates/colors.css'
+  output_path = '~/.config/gtk-4.0/colors.css'
 [templates.hyprland] # ─────────────────────────────────────────────────────────────────────────
   input_path  = './templates/hyprland.conf'
   output_path = '~/.config/hypr/matugen/colors.conf'
@@ -18,10 +24,10 @@
 [templates.hyprtoolkit] # ──────────────────────────────────────────────────────────────────────
   input_path  = './templates/hyprtoolkit.conf'
   output_path = '~/.config/hypr/hyprtoolkit.conf'
-[templates.kitty] # ────────────────────────────────────────────────────────────────────────────
-  input_path  = './templates/kitty.conf'
-  output_path = '~/.config/kitty/themes/matugen.conf'
-  post_hook   = "kitty +kitten themes --reload-in=all matugen"
+[templates.ghostty]
+  input_path  = "./templates/ghostty.conf"
+  output_path = "~/.config/ghostty/matugen"
+  post_hook   = "pkill -SIGUSR2 ghostty"
 [templates.millennium] # ───────────────────────────────────────────────────────────────────────
   input_path  = './templates/steam.css'
   output_path = '~/.steam/steam/steamui/skins/Material-Theme/css/main/colors/matugen.css'
@@ -32,4 +38,7 @@
 [templates.vesktop] # ──────────────────────────────────────────────────────────────────────────
   input_path  = './templates/vesktop.css'
   output_path = '~/.config/vesktop/themes/midnight-discord.css'
+[templates.waybar]
+  input_path  = './templates/colors.css'
+  output_path = '~/.config/waybar/matugen.css'
 # ──────────────────────────────────────────────────────────────────────────────────────────────

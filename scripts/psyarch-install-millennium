@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  if [ -d "$HOME/.steam" ]; then
-    pikaur -S --needed --noconfirm millennium
-  fi
+if [ -d "$HOME/.steam" ]; then pikaur -S --needed --noconfirm millennium; fi
 # ──────────────────────────────────────────────────────────────────────────────────────────────

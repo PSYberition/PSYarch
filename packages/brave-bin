@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
-    noto-fonts
+APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+  noto-fonts noto-fonts-cjk
 # ──────────────────────────────────────────────────────────────────────────────────────────────

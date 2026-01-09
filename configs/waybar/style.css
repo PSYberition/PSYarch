@@ -1,35 +1,75 @@
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-  @import "../omarchy/current/theme/waybar.css";
+  @import "./matugen.css";
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
 * {
-  font-family:"Cartograph CF";
-  background: transparent;
-  border-radius: 5px;
-  color: @foreground;
+  font-family: "Cartograph CF";
+  font-style: italic;
   font-weight: bold;
+  background: transparent;
+  color: @primary_fixed;
+  border-radius: 12px;
   border: none;
-  padding: 0;
+  padding: 0px;
+  margin: 0px;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-} tooltip {
-  background: @background;
+} box#window {
+  background: @on_secondary_fixed;
+  box-shadow: 0px 0px 4px @shadow;
+  border: 2px solid @tertiary;
+  margin: 14px;
+} box#window label {
+  padding: 14px;
+/* ────────────────────────────────────────────────────────────────────────────────────────── */
+} box#workspaces button {
+  background: @on_secondary_fixed;
+  box-shadow: 0px 0px 4px @shadow;
+  border: 2px solid @on_tertiary;
+  min-width: 50px;
+  margin: 14px;
+} box#workspaces button.active {
   border: 2px solid @primary;
+} box#workspaces .taskbar-window {
+  border: 3px solid transparent;
+} box#workspaces .taskbar-window.active {
+  border: 3px solid @on_secondary_fixed;
+  background: @inverse_primary;
+} box#workspaces image {
+  padding: 10px;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-} #workspaces button {
-  border: 2px solid transparent;
-  background: @background;
-  margin-bottom: 14px;
-  margin-right: 7px;
-  margin-left: 7px;
-  min-width: 20px;
+} label#bluetooth, box#tray image, label#clock, #custom-launcher, #custom-screenshot,
+  #custom-audio, #custom-hyprsunset {
+  background: @on_secondary_fixed;
+  box-shadow: 0px 0px 4px @shadow;
+  border: 2px solid @tertiary;
+  min-width: 24px;
+  padding: 14px;
+  margin: 14px;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-} #workspaces button.active {
+} box#tray menu {
+  background: @on_secondary_fixed;
   border: 2px solid @primary;
-  border-radius: 8px;
+  padding: 14px;
+} box#tray menu * {
+  color: @tertiary_fixed;
+  min-height: 7px;
+  padding: 2px;
+} box#tray menu menuitem:hover {
+  background: @inverse_primary;
+  border-radius: 6px;
+} box#tray menu menuitem:hover label {
+  color: @on_secondary_fixed;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-} #workspaces .taskbar-window {
-  border: 2px solid transparent;
-  padding: 8px;
+} tooltip box {
+  background: @on_secondary_fixed;
+  box-shadow: 0px 0px 4px @shadow;
+  border: 2px solid @primary;
+} tooltip label {
+  color: @tertiary_fixed;
+  padding: 7px;
 /* ────────────────────────────────────────────────────────────────────────────────────────── */
-} #workspaces .taskbar-window.active {
-  background: @foreground;
-} /* ──────────────────────────────────────────────────────────────────────────────────────── */
+} #custom-launcher, #custom-screenshot, #custom-audio, #custom-hyprsunset {
+  min-width: 50px;
+  font-size: 44;
+  padding: 0px;
+/* ────────────────────────────────────────────────────────────────────────────────────────── */
+}
