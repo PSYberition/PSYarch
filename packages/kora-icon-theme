@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+  repo="https://github.com/bikass/kora.git"
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+  mkdir -p "$HOME/.local/share/icons"
+  git clone "$repo" "/tmp/psyarch/git"
+  mv "/tmp/psyarch/git/kora" "$HOME/.local/share/icons"
+  rm -rf "/tmp/psyarch/git"
+# ──────────────────────────────────────────────────────────────────────────────────────────────
+  gsettings set org.gnome.desktop.interface icon-theme "kora"
+# ──────────────────────────────────────────────────────────────────────────────────────────────
