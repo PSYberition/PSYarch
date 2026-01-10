@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
-  fastfetch lolcat
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    fastfetch lolcat
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-cp -r "$(dirname "$0")/../configs/fastfetch" "$HOME/.config"
-cp -r "$(dirname "$0")/../configs/$APP" "$HOME/.config"
+  cp -r "$(dirname "$0")/../configs/fastfetch" "$HOME/.config"
+  cp -r "$(dirname "$0")/../configs/$APP" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-mkdir -p "$HOME/.cache/zsh"
-chsh -s /usr/bin/$APP
+  mkdir -p "$HOME/.cache/zsh"
+  chsh -s /usr/bin/$APP
 # ──────────────────────────────────────────────────────────────────────────────────────────────

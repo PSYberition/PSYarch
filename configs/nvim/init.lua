@@ -1,5 +1,5 @@
 -- ─────────────────────────────────────────────────────────────────────────────────────────────
-for f, t in vim.fs.dir(vim.fn.stdpath"config".."/lua/configs")do
-  if t == "file" and f:match"%.lua$"then require("configs."..f:gsub("%.lua$",""))end
-end
+  for f, t in vim.fs.dir(vim.fn.stdpath"config".."/lua/configs")do
+    if t == "file" and f:match"%.lua$"then require("configs."..f:gsub("%.lua$",""))end
+  end
 -- ─────────────────────────────────────────────────────────────────────────────────────────────

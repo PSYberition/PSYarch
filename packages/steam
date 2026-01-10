@@ -11,6 +11,6 @@
 #   esac; else exit 1; fi
 # fi
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
-  gamescope
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    gamescope
 # ──────────────────────────────────────────────────────────────────────────────────────────────

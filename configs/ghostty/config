@@ -1,12 +1,12 @@
 # ghostty +show-config --default --docs
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-font-family = Cartograph CF
+  font-family = Cartograph CF
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-config-file = matugen
+  config-file = matugen
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-confirm-close-surface = false
-app-notifications = no-config-reload
+  confirm-close-surface = false
+  app-notifications = no-config-reload
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-custom-shader-animation = always
-custom-shader = shaders/cursor_warp.glsl
+  custom-shader-animation = always
+  custom-shader = shaders/cursor_warp.glsl
 # ──────────────────────────────────────────────────────────────────────────────────────────────

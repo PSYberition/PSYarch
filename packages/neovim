@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
-  git wl-clipboard
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    git wl-clipboard
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-cp -r "$(dirname "$0")/../configs/nvim" "$HOME/.config"
+  cp -r "$(dirname "$0")/../configs/nvim" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-sudo ln -f /usr/bin/nvim /usr/bin/vi
+  sudo ln -f /usr/bin/nvim /usr/bin/vi
 # ──────────────────────────────────────────────────────────────────────────────────────────────

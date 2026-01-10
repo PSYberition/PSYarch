@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-sinks=$(wpctl status | grep -m1 -A99 "^ ├─ Sinks:$" | grep -v "^ ├─ Sinks:$" | grep -m1 -B99 "^ │  $" | grep -v "^ │  $" | cut -d '.' -f1 | tr ' ' '*' | cut -d '*' -f8 | tr '\n' ' ' | sed 's/ *$//') # what mOnSTrocItY have I created?
-sink=$(wpctl status | grep -m1 \* | awk '{print $3}' | cut -d '.' -f1)
-array=($sinks)
+  sinks=$(wpctl status | grep -m1 -A99 "^ ├─ Sinks:$" | grep -v "^ ├─ Sinks:$" | grep -m1 -B99 "^ │  $" | grep -v "^ │  $" | cut -d '.' -f1 | tr ' ' '*' | cut -d '*' -f8 | tr '\n' ' ' | sed 's/ *$//') # what mOnSTrocItY have I created?
+  sink=$(wpctl status | grep -m1 \* | awk '{print $3}' | cut -d '.' -f1)
+  array=($sinks)
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-for i in "${!array[@]}"; do [[ "${array[$i]}" == "$sink" ]] && INDEX=$i && break; done
-next=$(( (INDEX + 1) % ${#array[@]} ))
+  for i in "${!array[@]}"; do [[ "${array[$i]}" == "$sink" ]] && INDEX=$i && break; done
+  next=$(( (INDEX + 1) % ${#array[@]} ))
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-wpctl set-default "${array[$next]}"
+  wpctl set-default "${array[$next]}"
 # ──────────────────────────────────────────────────────────────────────────────────────────────

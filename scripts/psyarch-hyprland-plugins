@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-pikaur -S --needed --noconfirm meson cpio cmake
+  pikaur -S --needed --noconfirm meson cpio cmake
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-hyprpm update
-hyprpm add https://github.com/virtcode/hypr-dynamic-cursors
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm enable dynamic-cursors
-hyprpm enable hyprfocus
+  hyprpm update
+  hyprpm add https://github.com/virtcode/hypr-dynamic-cursors
+  hyprpm add https://github.com/hyprwm/hyprland-plugins
+  hyprpm enable dynamic-cursors
+  hyprpm enable hyprfocus
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-dir="$HOME/.config/hypr/psyarch"
-mv $dir/dynamic-cursors.off $dir/dynamic-cursors.conf
-mv $dir/hyprfocus.off $dir/hyprfocus.conf
+  dir="$HOME/.config/hypr/psyarch"
+  mv $dir/dynamic-cursors.off $dir/dynamic-cursors.conf
+  mv $dir/hyprfocus.off $dir/hyprfocus.conf
 # ──────────────────────────────────────────────────────────────────────────────────────────────

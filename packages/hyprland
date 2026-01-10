@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
-  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent \
-  qt5-wayland qt6-wayland noto-fonts ttf-jetbrains-mono-nerd \
-  ghostty swaync pipewire wireplumber playerctl hyprlauncher
+  APP=$(basename "$0"); pikaur -S --needed --noconfirm $APP \
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk hyprpolkitagent \
+    qt5-wayland qt6-wayland noto-fonts ttf-jetbrains-mono-nerd \
+    ghostty swaync pipewire wireplumber playerctl hyprlauncher
 # ──────────────────────────────────────────────────────────────────────────────────────────────
-cp -r "$(dirname "$0")/../configs/hypr" "$HOME/.config"
+  cp -r "$(dirname "$0")/../configs/hypr" "$HOME/.config"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
