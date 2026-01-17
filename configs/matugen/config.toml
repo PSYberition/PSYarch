@@ -10,11 +10,11 @@
   input_path  = './templates/btop.theme'
   output_path = '~/.config/btop/themes/matugen.theme'
   post_hook   = 'pkill -SIGHUP btop'
-[templates.gtk3]
+[templates.gtk3] # ─────────────────────────────────────────────────────────────────────────────
   input_path  = './templates/colors.css'
   output_path = '~/.config/gtk-3.0/colors.css'
   post_hook   = 'gsettings set org.gnome.desktop.interface gtk-theme "adw-gtk3-{{mode}}"'
-[templates.gtk4]
+[templates.gtk4] # ─────────────────────────────────────────────────────────────────────────────
   input_path  = './templates/colors.css'
   output_path = '~/.config/gtk-4.0/colors.css'
 [templates.hyprland] # ─────────────────────────────────────────────────────────────────────────
@@ -24,7 +24,7 @@
 [templates.hyprtoolkit] # ──────────────────────────────────────────────────────────────────────
   input_path  = './templates/hyprtoolkit.conf'
   output_path = '~/.config/hypr/hyprtoolkit.conf'
-[templates.ghostty]
+[templates.ghostty] # ──────────────────────────────────────────────────────────────────────────
   input_path  = "./templates/ghostty.conf"
   output_path = "~/.config/ghostty/matugen"
   post_hook   = "pkill -SIGUSR2 ghostty"
@@ -38,7 +38,7 @@
 [templates.vesktop] # ──────────────────────────────────────────────────────────────────────────
   input_path  = './templates/vesktop.css'
   output_path = '~/.config/vesktop/themes/midnight-discord.css'
-[templates.waybar]
+[templates.waybar] # ───────────────────────────────────────────────────────────────────────────
   input_path  = './templates/colors.css'
   output_path = '~/.config/waybar/matugen.css'
 # ──────────────────────────────────────────────────────────────────────────────────────────────
