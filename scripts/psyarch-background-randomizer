@@ -15,7 +15,7 @@
   mv "${bgs}.tmp" "$bgs"
 # ──────────────────────────────────────────────────────────────────────────────────────────────
   ffmpeg -y -i "$bg" -vframes 1 -q:v 2 /tmp/matugen.jpg
-  matugen image /tmp/matugen.jpg
+  matugen image /tmp/matugen.jpg --source-color-index 0
 # ──────────────────────────────────────────────────────────────────────────────────────────────
   pkill -x mpvpaper; pkill -x swaybg
   case "${bg,,}" in *.mp4 ) mpvpaper -p -o "no-audio loop" ALL "$bg" ;; esac
